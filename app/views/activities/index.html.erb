@@ -1,0 +1,10 @@
+<table>
+<% @activities.each do |activity|%>
+  <tr>
+    <td><%= activity.id %></td>
+    <td><%= activity.title %></td>
+    <td><%= activity.content %></td>
+    <td><%= link_to 'Show', activity_path(activity) %></td>
+  </tr>
+<% end%>
+</table>
