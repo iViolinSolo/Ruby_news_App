@@ -8,6 +8,7 @@ class ActivitiesController < ApplicationController
   end
 
   def new
+    @activity = Activity.new
   end
 
   def create
@@ -16,8 +17,11 @@ class ActivitiesController < ApplicationController
     @activity = Activity.new(activity_params)
     puts @activity
 
-    @activity.save
-    redirect_to @activity
+    if @activity.save
+      redirect_to @activity
+    else
+      render 'new'
+    end
   end
 
   private
