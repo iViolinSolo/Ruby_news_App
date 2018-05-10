@@ -11,6 +11,11 @@ class ActivitiesController < ApplicationController
     @activity = Activity.new
   end
 
+  def edit
+    @activity = Activity.find(params[:id])
+    # render plain: @activity.inspect
+  end
+
   def create
     # render plain: params[:activity].inspect
     # @activity = Activity.new(params[:activity])

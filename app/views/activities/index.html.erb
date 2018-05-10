@@ -1,3 +1,5 @@
+<h1>Show All Activities</h1>
+
 <table>
 <% @activities.each do |activity|%>
   <tr>
@@ -5,6 +7,7 @@
     <td><%= activity.title %></td>
     <td><%= activity.content %></td>
     <td><%= link_to 'Show', activity_path(activity) %></td>
+    <td><%= link_to 'Edit', edit_activity_path(activity) %></td>
   </tr>
 <% end%>
 </table>
