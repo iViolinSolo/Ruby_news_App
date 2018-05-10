@@ -29,6 +29,16 @@ class ActivitiesController < ApplicationController
     end
   end
 
+  def update
+    @activity = Activity.find(params[:id])
+
+    if @activity.update(activity_params)
+      redirect_to @activity
+    else
+      render 'edit'
+    end
+  end
+
   private
 
     def activity_params
