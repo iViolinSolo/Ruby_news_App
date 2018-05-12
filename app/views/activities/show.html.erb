@@ -19,6 +19,7 @@
     <%= comment.body %>
   </p>
 <% end %>
+<%= render @activity.comments %>
 
 <h2>Add a comment:</h2>
 <%= form_for([@activity, @activity.comments.build]) do |f| %>
